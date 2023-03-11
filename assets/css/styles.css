@@ -2,8 +2,14 @@
   padding: 1rem;
   margin-left: auto;
   margin-right: auto;
-
 }
+@media screen and (min-width: 820px) {
+    .page {
+      width: 100%;
+      max-width: 30rem;
+    }
+}
+
 .page__title {
   font-size: 3rem;
 }
@@ -11,11 +17,13 @@
 .accordion {
 }
 
-.accordion__checkbox {
+.accordion__input {
   display: none;
 }
 
 .accordion__item {
+  margin-bottom: 3rem;
+  display: block;
 }
 
 .accordion-item {
@@ -35,13 +43,14 @@
 .accordion-item__icon {
   width: 2rem;
   height: 2rem;
-  transition: transform 0.3s;
+  opacity: 0;
+  transition: all 0.3s;
 }
 
-.accordion__checkbox[id="bayan-1"]:checked ~ label[for="bayan-1"] .accordion-item__icon,
-.accordion__checkbox[id="bayan-2"]:checked ~ label[for="bayan-2"] .accordion-item__icon,
-.accordion__checkbox[id="bayan-3"]:checked ~ label[for="bayan-3"] .accordion-item__icon,
-.accordion__checkbox[id="bayan-4"]:checked ~ label[for="bayan-4"] .accordion-item__icon{
+.accordion__input[id="bayan-1"]:checked ~ .accordion__item[for="bayan-1"] .accordion-item__icon,
+.accordion__input[id="bayan-2"]:checked ~ .accordion__item[for="bayan-2"] .accordion-item__icon,
+.accordion__input[id="bayan-3"]:checked ~ .accordion__item[for="bayan-3"] .accordion-item__icon,
+.accordion__input[id="bayan-4"]:checked ~ .accordion__item[for="bayan-4"] .accordion-item__icon{
   transform: rotate(-45deg);
 }
 
@@ -54,10 +63,10 @@
 
 }
 
-.accordion__checkbox[id="bayan-1"]:checked ~ label[for="bayan-1"] .accordion-item__image-wrapper,
-.accordion__checkbox[id="bayan-2"]:checked ~ label[for="bayan-2"] .accordion-item__image-wrapper,
-.accordion__checkbox[id="bayan-3"]:checked ~ label[for="bayan-3"] .accordion-item__image-wrapper,
-.accordion__checkbox[id="bayan-4"]:checked ~ label[for="bayan-4"] .accordion-item__image-wrapper {
+.accordion__input[id="bayan-1"]:checked ~ .accordion__item[for="bayan-1"] .accordion-item__image-wrapper,
+.accordion__input[id="bayan-2"]:checked ~ .accordion__item[for="bayan-2"] .accordion-item__image-wrapper,
+.accordion__input[id="bayan-3"]:checked ~ .accordion__item[for="bayan-3"] .accordion-item__image-wrapper,
+.accordion__input[id="bayan-4"]:checked ~ .accordion__item[for="bayan-4"] .accordion-item__image-wrapper {
   height: auto;
 }
 
@@ -67,11 +76,18 @@
 
 }
 
-.accordion__checkbox[id="bayan-1"]:checked ~ label[for="bayan-1"] .accordion-item__image,
-.accordion__checkbox[id="bayan-2"]:checked ~ label[for="bayan-2"] .accordion-item__image,
-.accordion__checkbox[id="bayan-3"]:checked ~ label[for="bayan-3"] .accordion-item__image,
-.accordion__checkbox[id="bayan-4"]:checked ~ label[for="bayan-4"] .accordion-item__image {
+.accordion__input[id="bayan-1"]:checked ~ .accordion__item[for="bayan-1"] .accordion-item__image,
+.accordion__input[id="bayan-2"]:checked ~ .accordion__item[for="bayan-2"] .accordion-item__image,
+.accordion__input[id="bayan-3"]:checked ~ .accordion__item[for="bayan-3"] .accordion-item__image,
+.accordion__input[id="bayan-4"]:checked ~ .accordion__item[for="bayan-4"] .accordion-item__image {
   transition: all 0.3s;
   opacity: 1;
   transform: scale(1);
+}
+
+@media (hover: hover) {
+
+  .accordion:hover .accordion-item__icon {
+    opacity: 1;
+  }
 }
